@@ -1,6 +1,6 @@
 {
-  "name": "regex-property-action",
-  "version": "1.0.0",
+  "name": "file-regex-replace",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashley-taylor/regex-property-action.git"
+    "url": "git+https://github.com/mingjun97/regex-property-action.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ashley-taylor/regex-property-action/issues"
+    "url": "https://github.com/mingjun97/regex-property-action/issues"
   },
-  "homepage": "https://github.com/ashley-taylor/regex-property-action#readme",
+  "homepage": "https://github.com/mingjun97/regex-property-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.3"
   }
