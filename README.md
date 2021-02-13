@@ -14,6 +14,8 @@
 
 ## Example
 
+[Example action file](https://github.com/mingjun97/file-regex-replace/blob/master/example.yml)
+
 ```yml
     - name: Modify version number
       uses: mingjun97/file-regex-replace
@@ -27,3 +29,8 @@
         path: '.'                   # Optional, defaults to '.'
 ``` 
    
+## Why Build This
+
+  I build this Github Action to help build a nightly release to make the workflow could automaticly append a string `-nightly` after the version number recorded in `package.json`.
+  
+  There is no other existing workflow could meet my requirements as far as I searched. [jacobtomlinson/gha-find-replace](https://github.com/jacobtomlinson/gha-find-replace), which I borrowed ideas from, works well but it only supports linux platform. Thus my nightly build workflow could not work for multiple platform.

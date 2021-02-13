@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  - push
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mingjun97/regex-property-action@test
+        with:
+          regex: '"version": "([0-9\.]*)",'
+          replacement: '"version": "$1-test",'
+          include: 'package.json'
+      - uses: actions/upload-artifact@v2  # upload to artifact to see the changes
+        with:
+          name: test
+          path: |
+            *.json
+
