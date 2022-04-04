@@ -10,10 +10,12 @@ function walk_recursive(dir, exclude, callback) {
       var filepath = path.join(dir, file);
       if (!exclude.test(filepath)) {
           fs.stat(filepath, function(err,stats) {
-            if (stats.isDirectory()) {
-              walk_recursive(filepath, exclude, callback);
-            } else if (stats.isFile()) {
-              callback(filepath, stats);
+            if (!err) {
+              if (stats.isDirectory()) {
+                walk_recursive(filepath, exclude, callback);
+              } else if (stats.isFile()) {
+                callback(filepath, stats);
+              }
             }
           });
         }
