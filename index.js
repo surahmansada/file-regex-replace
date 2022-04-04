@@ -4,21 +4,21 @@ const path = require("path");
 
 
 function walk_recursive(dir, exclude, callback) {
-	fs.readdir(dir, function(err, files) {
-		if (err) throw err;
-		files.forEach(function(file) {
-			var filepath = path.join(dir, file);
-    if (!exclude.test(filepath)) {
-        fs.stat(filepath, function(err,stats) {
-          if (stats.isDirectory()) {
-            walk_recursive(filepath, exclude, callback);
-          } else if (stats.isFile()) {
-            callback(filepath, stats);
-          }
-        });
-      }
-		});
-	});
+  fs.readdir(dir, function(err, files) {
+    if (err) throw err;
+    files.forEach(function(file) {
+      var filepath = path.join(dir, file);
+      if (!exclude.test(filepath)) {
+          fs.stat(filepath, function(err,stats) {
+            if (stats.isDirectory()) {
+              walk_recursive(filepath, exclude, callback);
+            } else if (stats.isFile()) {
+              callback(filepath, stats);
+            }
+          });
+        }
+    });
+  });
 }
 
 try {
