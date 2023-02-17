@@ -44,6 +44,7 @@ try {
             if (err)
               return core.setFailed(err);
           });
+          setOutput('value', result);
         }
       });
     }
