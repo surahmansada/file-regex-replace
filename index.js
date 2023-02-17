@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const fs = require('fs');
 const path = require("path");
-
+const { getInput, setOutput, setFailed } = require('@actions/core');
 
 function walk_recursive(dir, exclude, callback) {
   fs.readdir(dir, function(err, files) {
