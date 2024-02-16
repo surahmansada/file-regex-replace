@@ -24,6 +24,7 @@ function walk_recursive(dir, exclude, callback) {
 }
 
 try {
+  console.log('Regex: ' + core.getInput('regex'));
   const regex = new RegExp(core.getInput('regex'), core.getInput('flags'));
   const replacement = core.getInput('replacement');
   const include = new RegExp(core.getInput('include'));
