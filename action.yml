@@ -35,5 +35,5 @@ outputs:
   value:
     description: 'regex replaced in your repository files'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'index.js'
