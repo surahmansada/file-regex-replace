@@ -47,6 +47,9 @@ try {
           });
           setOutput('value', result);
         }
+        else {
+          console.log('No match found.');
+        }
       });
     }
   })
